@@ -1,5 +1,7 @@
 import orangehrm from "../../../fixtures/orangehrm.json"
 import addemployee from "../../../fixtures/addemployee.json"
+import 'cypress-file-upload'
+
 
 class orangehrmpage {
 
@@ -20,6 +22,8 @@ leftpanelmenu(options){
 addemployee(){
     const randomnum = Math.random().toString().charAt(5)
     cy.contains('button',' Add ').click()
+    cy.wait(3000)
+    cy.get('.employee-image-wrapper').attachFile('img1.jpg')
     cy.get('input[placeholder="First Name"]').type(addemployee.FirstName +randomnum)
     cy.get('input[placeholder="Last Name"]').type(addemployee.LastName +randomnum)
     cy.get('[class="oxd-input oxd-input--active"]').eq(1).clear().type(addemployee.Employeeid +randomnum)
@@ -29,11 +33,12 @@ addemployee(){
     cy.contains('Password').parent().siblings().type(addemployee.Password)
     cy.contains('Confirm Password').parent().siblings().type(addemployee.ConfirmPassword)
     cy.contains('button',' Save ').click()
-    cy.get('.toast-message').should('be.visible').should('have.text', 'Sucessfully Saved.');
+    cy.get('.oxd-toast-start').should('be.visible').should('have.text', 'SuccessSuccessfully Saved');
+  
 
 
 
 }
 
 }
- export default new orangehrmpage()
+ export default new orangehrmpage() 

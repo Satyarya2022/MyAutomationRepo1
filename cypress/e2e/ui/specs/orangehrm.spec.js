@@ -10,6 +10,7 @@ describe('orangehrm url suite',function(){
     orangehrmpage.leftpanelmenu('PIM')
     orangehrmpage.addemployee()
 
+
         
     })
 
