@@ -20,6 +20,7 @@ leftpanelmenu(options){
 addemployee(){
     const randomnum = Math.random().toString().charAt(5)
     cy.contains('button',' Add ').click()
+    cy.wait(3000)
     cy.get('input[placeholder="First Name"]').type(addemployee.FirstName +randomnum)
     cy.get('input[placeholder="Last Name"]').type(addemployee.LastName +randomnum)
     cy.get('[class="oxd-input oxd-input--active"]').eq(1).clear().type(addemployee.Employeeid +randomnum)
