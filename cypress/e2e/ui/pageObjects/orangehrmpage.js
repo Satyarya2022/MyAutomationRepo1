@@ -22,7 +22,7 @@ leftpanelmenu(options){
 addemployee(){
     const randomnum = Math.random().toString().charAt(5)
     cy.contains('button',' Add ').click()
-    cy.wait(3000)
+    cy.wait(5000)
     cy.get('.employee-image-wrapper').attachFile('img1.jpg')
     cy.get('input[placeholder="First Name"]').type(addemployee.FirstName +randomnum)
     cy.get('input[placeholder="Last Name"]').type(addemployee.LastName +randomnum)
