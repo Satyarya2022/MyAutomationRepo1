@@ -28,6 +28,7 @@ workflows:
   run-test-workflow:
     jobs:
       - run-test
-    branches:
+    filters :
+      branches:
       only:
         - main
