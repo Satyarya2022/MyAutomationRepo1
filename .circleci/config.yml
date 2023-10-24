@@ -28,3 +28,6 @@ workflows:
   run-test-workflow:
     jobs:
       - run-test
+    branches:
+      only:
+        - main
