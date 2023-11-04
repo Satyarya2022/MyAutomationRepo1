@@ -7,8 +7,9 @@ describe('orangehrm url suite',function(){
     it('orangehrm url ',function(){
 
     orangehrmpage.login()
-    orangehrmpage.leftpanelmenu('PIM')
-    orangehrmpage.addemployee()
+    orangehrmpage.leftpanelmenu('Recruitment')
+    //orangehrmpage.addemployee()
+    orangehrmpage.addcandidates()
 
         
     })
